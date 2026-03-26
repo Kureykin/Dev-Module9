@@ -16,7 +16,7 @@ public class HttpStatusImageDownloader {
 
         try {
             HttpRequest request = HttpRequest.newBuilder(URI.create(link)).build();
-            response = client.send(request, HttpResponse.BodyHandlers.ofFile(Path.of("download/"+ code + ".jpg")));
+            response = client.send(request, HttpResponse.BodyHandlers.ofFile(Path.of("src/main/resources/"+ code + ".jpg")));
 
             System.out.print("STATUS CODE:" + response.statusCode());
         } catch (IOException | InterruptedException e) {

@@ -8,10 +8,11 @@ import java.net.http.HttpResponse;
 import java.nio.file.Path;
 
 public class HttpStatusImageDownloader {
+    private HttpClient client = HttpClient.newHttpClient();
+
     void downloadStatusImage(int code) throws PostNotFoundException {
         String link = new HttpStatusChecker().getStatusImage(code);
 
-        HttpClient client = HttpClient.newHttpClient();
         HttpResponse<Path> response;
 
         try {

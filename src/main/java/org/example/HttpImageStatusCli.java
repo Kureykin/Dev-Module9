@@ -22,6 +22,8 @@ public class HttpImageStatusCli {
             endOfInput = true;
         }
 
+        scan.close();
+
         try {
             new HttpStatusImageDownloader().downloadStatusImage(statusCode);
         } catch (PostNotFoundException e) {
